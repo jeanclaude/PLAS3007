@@ -1,0 +1,15 @@
+Feature: Test the Calculator at http://www.math.com/students/calculators/source/basic.htm
+
+  Scenario Outline: Doing calculations on the online calculator
+    Given I am logged into the online calculator and the display is empty
+    When I click the buttons '<first><operator><second>' followed by the = button
+    Then the text shown on the display is <answer>
+    Examples:
+      | first | operator | second | answer |
+      | 5     | +        | 2      | 7      |
+      | 158   | *        | 222    | 3476   |
+      | 10    | -        | 2      | 8      |
+      | 12    | /        | 6      | 2      |
+      | 5     | /        | 0      | Infinity     |
+
+
